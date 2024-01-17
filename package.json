@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "fix": "npx prettier --write ."
+    "fix": "npx prettier --write .",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.1.0",
-    "@types/node": "^20.10.8",
+    "@types/node": "^20.11.5",
     "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   },
