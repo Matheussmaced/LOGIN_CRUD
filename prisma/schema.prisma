@@ -7,8 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Person {
-  userId   Int    @default(autoincrement())
+model Users {
+  userId   String @id @default(uuid())
   email    String @unique
   password String @unique
+
+  @@map("Users")
 }
