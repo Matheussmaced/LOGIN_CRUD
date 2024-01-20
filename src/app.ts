@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import fastify from 'fastify'
+import { createUsers } from './routes/create-users'
 
 export const app = fastify()
 const prisma = new PrismaClient()
@@ -11,6 +12,6 @@ prisma.users.create({
   },
 })
 
-app.get('/hello', () => {
-  return 'Hello world!'
+app.register(createUsers, {
+  prefix: 'create-users',
 })
