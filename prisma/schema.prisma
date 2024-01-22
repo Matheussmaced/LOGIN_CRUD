@@ -8,9 +8,10 @@ datasource db {
 }
 
 model Users {
-  userId   String @id @default(uuid())
-  email    String @unique
-  password String @unique
+  userId        String   @id @default(uuid())
+  email         String   @unique
+  password_hash String   @unique
+  created_at    DateTime @default(now())
 
   @@map("Users")
 }
